@@ -6,15 +6,23 @@
 managed skills synchronized from one repository-owned source of truth.
 
 ```text
-_shared/core.md + overlays/<runtime>.md + skills/<name>/SKILL.md
-        |
-        | project / project_skills
-        v
-~/.claude, ~/.codex, ~/.gemini instruction files and skill directories
-        ^
-        | promote / capture --confirm
-        |
-reviewed runtime edits or chat-provided rules/skills
+                    SOURCE OF TRUTH (this repo)
+   _shared/core.md + overlays/<runtime>.md + skills/<name>/SKILL.md
+                            |         ^
+              project / project_skills   promote / capture --confirm
+                            v         |
+      ~/.claude, ~/.codex, ~/.gemini instruction files + skill directories
+                            |
+        +-------------------+-------------------+-------------------+
+        |                   |                   |                   |
+  session start        daily (no AI       on demand, any        on demand,
+  hook: sense           session open):     MCP client:            operator-
+  (read-only) ->        watcher.watch_once mcp-serve exposes      invoked skill:
+  AI names findings,    -> pending.json    sense/check/status     draft-proposals
+  asks operator ->      (advisory) +       tools (read-only)      -> proposal
+  approved command      notification                              artifacts
+  writes back to                                                   (scratch only;
+  source (loop above)                                              operator applies)
 ```
 
 Managed skill projection is not a recursive runtime mirror. The payload is

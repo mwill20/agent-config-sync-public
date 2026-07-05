@@ -61,6 +61,11 @@ _shared/core.md + overlays/<runtime>.md + skills/<name>/SKILL.md
 reviewed runtime edits or chat-provided rules/skills
 ```
 
+That is the core write loop. Sensing, the ambient watcher, the MCP server,
+and the operator-invoked proposal agent all sit on top of it, read-only until
+an operator approves a step back into this loop; see the full diagram in
+[docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
+
 ## Repo layout
 
 ```text
