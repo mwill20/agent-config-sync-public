@@ -1,0 +1,6 @@
+#!/bin/sh
+# Block commits when any runtime instruction file is out of sync with source.
+python -m agent_config_sync check || {
+    echo "agent-config-sync: derived files are stale. Run 'python -m agent_config_sync project' and re-add."
+    exit 1
+}

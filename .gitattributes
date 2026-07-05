@@ -1,0 +1,4 @@
+# Enforce LF newlines (project constraint); keeps the shell hook runnable.
+* text=auto eol=lf
+*.png binary
+*.jpg binary

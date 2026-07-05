@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools==81.0.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "agent-config-sync"
+version = "0.1.0"
+description = "Vendor-neutral source of truth that projects AI runtime config across Claude Code, Codex, and Gemini/AntiGravity."
+requires-python = ">=3.11"
+dependencies = ["pyyaml==6.0.2"]
+
+[project.optional-dependencies]
+dev = ["pytest==8.3.4"]
+
+[project.scripts]
+agent-config-sync = "agent_config_sync.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]

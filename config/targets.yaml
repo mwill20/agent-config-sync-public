@@ -1,0 +1,25 @@
+# Allowlist of what agent-config-sync may write, and where.
+# Destinations MUST resolve under ~/.claude, ~/.codex, or ~/.gemini.
+runtimes:
+  claude:
+    instruction_dest: "~/.claude/CLAUDE.md"
+    overlay: "overlays/claude.md"
+    skills_dest: "~/.claude/skills"
+  codex:
+    instruction_dest: "~/.codex/AGENTS.md"
+    overlay: "overlays/codex.md"
+    skills_dest: "~/.codex/skills"
+  gemini:
+    instruction_dest: "~/.gemini/GEMINI.md"
+    overlay: "overlays/gemini.md"
+    skills_dest: "~/.gemini/config/skills"
+
+# Skills sense() must not flag as enrollment candidates: deliberate,
+# operator-recorded exclusions (see docs/LIMITATIONS.md for why notebooklm).
+sense_ignore_skills: []
+
+# Skills under management. MUST remain the last top-level key; enroll
+# rewrites this trailing block and refuses if another key follows it.
+managed_skills:
+  - "config-sync"
+  - "draft-proposals"

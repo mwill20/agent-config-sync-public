@@ -1,0 +1,4 @@
+#!/bin/sh
+# Startup sensing for agent-config-sync. Surfaces what changed and the exact
+# resolution command for the operator to approve; never blocks the session.
+agent-config-sync sense || true

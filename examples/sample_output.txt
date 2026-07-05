@@ -1,0 +1,15 @@
+$ agent-config-sync check
+All runtimes in sync.
+(exit code 0)
+
+$ agent-config-sync project --dry-run
+unchanged  claude -> C:\Users\<you>\.claude\CLAUDE.md
+unchanged  codex -> C:\Users\<you>\.codex\AGENTS.md
+unchanged  gemini -> C:\Users\<you>\.gemini\GEMINI.md
+unchanged  claude config-sync -> C:\Users\<you>\.claude\skills\config-sync\SKILL.md
+...one line per managed file; kinds are create, update, unchanged, or forced.
+No files are modified by a dry run.
+
+$ agent-config-sync capture standard --target core --text-file examples/sample_rule.md
+(unified diff of the proposed _shared/core.md change)
+DRY-RUN - nothing written. Re-run with --confirm to apply + project.
