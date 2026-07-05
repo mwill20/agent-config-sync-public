@@ -1,4 +1,4 @@
-# Gemini.md — agent-config-sync
+# CLAUDE.md — agent-config-sync
 
 Project context for AI assistant sessions in this repository. Read HANDOFF.md
 next for current status; verify live state before trusting either file.
@@ -26,7 +26,7 @@ capture, and reverse promotion.
   plugin skills are never enrolled.
 - `managed_skills` must remain the last top-level key in `config/targets.yaml`.
 - A blanket `--force` is refused when more than one target drifted; scope it
-  to one runtime (`project gemini --force`).
+  to one runtime (`project claude --force`).
 - Commit and push only when the operator asks. This is the sanitized public
   mirror; the operator's full standards live in a private original.
 
@@ -61,4 +61,5 @@ A git pre-commit hook runs `agent-config-sync check` on every commit.
 - Docs describe the current state; superseded audits get a banner, not a
   rewrite. Test counts in docs are baselines that grow; EVALUATION.md is the
   running log.
+- Keep README free of em dashes; prefer plain punctuation there.
 
