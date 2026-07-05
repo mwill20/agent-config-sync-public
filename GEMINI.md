@@ -61,4 +61,4 @@ A git pre-commit hook runs `agent-config-sync check` on every commit.
 - Docs describe the current state; superseded audits get a banner, not a
   rewrite. Test counts in docs are baselines that grow; EVALUATION.md is the
   running log.
-- Keep README free of em dashes; prefer plain punctuation there.
+
