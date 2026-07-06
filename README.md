@@ -11,6 +11,12 @@
 > lessons are the real thing. Capstone writeup:
 > [docs/KAGGLE_WRITEUP.md](docs/KAGGLE_WRITEUP.md).
 
+## Demo
+
+Five-minute walkthrough of the system in action:
+[watch on YouTube](https://youtu.be/rfd1p7zYsuA) or download the same video
+from this repo at [docs/agent-config-sync-demo.mp4](docs/agent-config-sync-demo.mp4).
+
 > One source of truth for the AI coding assistants you run side-by-side.
 > Write a standard or skill once, project it to Claude Code, Codex, and
 > Gemini/AntiGravity, and promote useful runtime edits back into the source.
@@ -63,7 +69,13 @@ reviewed runtime edits or chat-provided rules/skills
 
 That is the core write loop. Sensing, the ambient watcher, the MCP server,
 and the operator-invoked proposal agent all sit on top of it, read-only until
-an operator approves a step back into this loop; see the full diagram in
+an operator approves a step back into this loop:
+
+<p align="center">
+  <img src="docs/architecture-diagram.png" alt="Full architecture: source of truth through deterministic gates to three runtimes, with session hooks, daily ambient watcher, MCP server, and the operator-invoked draft-proposals agent" width="720">
+</p>
+
+The same diagram in text form, with design rationale per component, lives in
 [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
 
 ## Repo layout
